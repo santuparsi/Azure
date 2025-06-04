@@ -1,0 +1,4 @@
+Steps:
+1. Created a simple C# app
+2. Configured a DNS name for the Virtual Machine
+3. Deployed the application to the Virtual Machine using the DNS name

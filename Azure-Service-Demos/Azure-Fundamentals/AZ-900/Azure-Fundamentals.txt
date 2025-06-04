@@ -1,0 +1,28 @@
+What is Cloud Computing?
+========================
+1.A way to deliver the computing as a service rather than a product.
+2.It Provides on-demand hardware(like servers),storage resources,service hosting,service management environment and other devices as a resource over the internet.
+3.It is a way to rend computing and storage from someone else datacenter(Microsoft having datacenters accross the world(india,us,japan,china etc))
+4.Microsoft datacenter manage by Microsoft team.
+
+Cloud Computing Advantages
+==========================
+1.High availability: Your cloud based application/services will always run with no downtime even when things go wrong.
+2.Scalabiltiy:Cloud-based applications can be scaled in two-ways
+	1.Vertically:Computing capacity can be increased by addin RAM or CPUs to a verticle machine.
+	2.Horizantally: Computing capacity can be increased by adding instances of a resource.
+3.Elasticity:Cloud-based applications can be configured for auto scaling,so it will always have the resource when they needed.
+4.Agility:cloud-based resources can be deployed and configured quickly as your applications requirements change.
+5.Geo-Distribution: applications and data can be deployed to regional datacenters around the globe,so your customers always have the best performance in their region.
+6.Disaster Recovery: Cloud-based applications data is replicated and geo-distribution make your data safe even a disaster occur.
+
+Cloud Computing Offering
+========================
+1.IaaS:
+	# Virtual Manchines and Storage
+2.PaaS:
+	#App-services ,Azure SQL is part of PaaS
+3.SaaS:
+	# Office 365,Visual Studion Online
+	
+Note: SaaS is costly than PaaS and PaaS is costly than IaaS

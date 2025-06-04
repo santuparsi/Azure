@@ -1,0 +1,2 @@
+Steps taken to implement:
+Wrote an ARM template that deploys an Azure function and code from a git Repo.

@@ -1,0 +1,5 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/eb8185a5-b265-4cca-b460-b6548a374554/resourceGroups/my-rg/providers/Microsoft.Web/sites/reactapp57",
+  "appService.deploySubpath": "build",
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"]
+}

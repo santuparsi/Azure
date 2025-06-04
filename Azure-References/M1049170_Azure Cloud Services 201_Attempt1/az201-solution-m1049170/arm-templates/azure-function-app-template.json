@@ -1,0 +1,98 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2018-07-01",
+            "name": "storagefunc",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "storagefunc"
+            },
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2"
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "name": "servicePlan",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "S2",
+                "tier": "Standard"
+            },
+            "properties": {
+                "name": "servicePlan",
+                "computeMode": "Dynamic"
+            },
+            "tags": {
+                "displayName": "servicePlan"
+            }
+        },
+         {
+              "apiVersion": "2015-08-01",
+              "type": "Microsoft.Web/sites",
+              "name": "201functionapp",
+              "location": "[resourceGroup().location]",
+              "kind": "201functionapp",
+              "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', 'servicePlan')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', 'storagefunc')]"
+              ],
+              "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'servicePlan')]",
+                "siteConfig": {
+                  "appSettings": [
+                    {
+                      "name": "AzureWebJobsDashboard",
+                      "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storagefunc', ';AccountKey=', listKeys('storagefunc','2015-05-01-preview').key1)]"
+                    },
+                    {
+                      "name": "AzureWebJobsStorage",
+                      "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storagefunc', ';AccountKey=', listKeys('storagefunc','2015-05-01-preview').key1)]"
+                    },
+                    {
+                      "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                      "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storagefunc', ';AccountKey=', listKeys('storagefunc','2015-05-01-preview').key1)]"
+                    },
+                    {
+                      "name": "WEBSITE_CONTENTSHARE",
+                      "value": "storagefunc"
+                    },
+                    {
+                      "name": "FUNCTIONS_EXTENSION_VERSION",
+                      "value": "~2"
+                    },
+                    {
+                      "name": "FUNCTIONS_WORKER_RUNTIME",
+                      "value": "dotnet"
+                    }
+                  ]
+                }
+              },
+              "resources": [
+                  {
+                      "apiVersion": "2015-08-01",
+                      "name": "web",
+                      "type": "sourcecontrols",
+                      "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites/', '201functionapp')]"
+                      ],
+                      "properties": {
+                          "RepoUrl": "https://github.com/FBoucher/AzUnzipEverything.git",
+                          "branch": "master",
+                          "publishRunbook": true,
+                          "IsManualIntegration": true
+                      }
+                 }
+              ]
+            }
+        
+    ],
+    "outputs": {}
+}

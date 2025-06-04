@@ -1,0 +1,5 @@
+Steps taken to implement:
+1. Started with a sample ARM template for deploying a VPN provided by Azure on Github
+2. Customized the ARM template to deploy two Network Security Groups: one for the web / application, and the other for the data.
+3. The web NSG needed to have port 3389 open for RDP access (to enable accessing the VM), port 8172 for allowing web deployments (so that applications can be deployed there), and ports 80 and 443 for http / https access.
+4. The data NSG needed to have 1433 inbound open only for the web NSG, so that the application can access data from there. It also blocks access from the app subnet and Internet on all other ports. 

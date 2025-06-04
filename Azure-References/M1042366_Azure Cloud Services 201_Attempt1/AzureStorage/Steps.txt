@@ -1,0 +1,5 @@
+Steps taken to implement:
+1. Wrote a powershell script that can be used as a template to deploy an Azure Storage account.
+2. To enable HTTPS access only, the EnableHttpsTrafficOnly is set to true.
+3. SKU restrictions and encryption are enabled by default.
+4. Ran the script locally and deployed the storage account.

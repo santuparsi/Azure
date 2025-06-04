@@ -1,0 +1,23 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "SQLEndpointUrl": "https://natesqldb.documents.azure.com:443/",
+    "SQLPrimaryKey": "",
+    "DatabaseId": "FamilyDatabase",
+    "MongoDatabaseId": "MainDatabase",
+    "ContainerId": "FamilyContainer",
+    "CollectionId": "TestCollection",
+    "MongoDBEndpointURL": "https://natemongodb.documents.azure.com:443/",
+    "MonboDBPrimaryKey": "",
+    "CassandraContactPoint": "nathancassandradb.cassandra.cosmos.azure.com",
+    "CassandraUsername": "nathancassandradb",
+    "CassandraPassword": "",
+    "CassandraPort": 10350,
+    "MongoDBConnectionString": "",
+    "GremlinEndpointUrl": "nategremlindb.gremlin.cosmos.azure.com",
+    "GremlinPrimaryKey": "",
+    "TableStorageConnectionString": ""
+  }
+}

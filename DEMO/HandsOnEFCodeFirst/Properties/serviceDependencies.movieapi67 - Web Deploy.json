@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "secrets2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/movieapi67/providers/Microsoft.ServiceLinker/linkers/VaultUri_21A421B891",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/mykey267",
+      "type": "secrets.keyVault",
+      "connectionId": "VaultUri",
+      "dynamicId": null
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/movieapi67/providers/Microsoft.ServiceLinker/linkers/ConnectionStrings_F7A9DFC7B7",
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/myserver67/databases/Moviedb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings",
+      "dynamicId": null
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/movieapi67/providers/Microsoft.ServiceLinker/linkers/BlobConnectionString_0EF7E7A45C, /subscriptions/eb8185a5-b265-4cca-b460-b6548a374554/resourceGroups/my-rg/providers/Microsoft.Web/sites/movieapi67/providers/Microsoft.ServiceLinker/linkers/BlobConnectionString_1CFE61E1CA",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/mystorage526",
+      "type": "storage.azure",
+      "connectionId": "BlobConnectionString",
+      "dynamicId": null
+    }
+  }
+}

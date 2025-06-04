@@ -1,0 +1,39 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [
+      {
+  "name": "201encstorageaccount",
+  "type": "Microsoft.Storage/storageAccounts",
+  "apiVersion": "2019-04-01",
+  "sku": {
+    "name": "Standard_LRS"
+  },
+  "kind": "StorageV2",
+  "location": "[resourceGroup().location]",
+  "tags": {},
+  "identity": {
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    
+    "encryption": {
+        "keySource": "Microsoft.Storage",
+      "services": {
+        "blob": {
+          "enabled": "true"
+        },
+        "file": {
+          "enabled": "true"
+        }
+      }
+    },
+    "supportsHttpsTrafficOnly": "true",
+    "isHnsEnabled": "false",
+    "largeFileSharesState": "enabled"
+  },
+  "resources": []
+}
+  ]
+}

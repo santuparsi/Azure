@@ -1,0 +1,4 @@
+Steps taken to implement:
+1. Wrote an ARM template and PowerShell script and deployed the VM to the web NSG of the VPN created earlier.
+2. Connected to the VM using a Remote Desktop Connection
+3. Installed the necessary components so that a web application could be deployed there (Web Server (IIS) and Management Service, and Web Deploy 3.6)

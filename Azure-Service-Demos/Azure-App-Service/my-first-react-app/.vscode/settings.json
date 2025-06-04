@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/eb8185a5-b265-4cca-b460-b6548a374554/resourceGroups/myrg/providers/Microsoft.Web/sites/myapp426",
+  "appService.deploySubpath": "build"
+}
